@@ -45,10 +45,20 @@ robot.line_speed(2)
 #robot.cross3(2)
 #Right turn and straight intersection
 #robot.cross4(2)
-#Query intersection, actual measurement cannot identify
+#Query intersection, 1 = intersection, 2 = T-junction, 3 = left turn and straight ahead intersection, 4 = right turn and straight ahead intersection
 #print(robot.inquire_cross())
 
 while 1:
-    pass
+    inqCrs = robot.inquire_cross()
+    #print("Line sensor:", robot.read_patrol(robot.L2),robot.read_patrol(robot.L1),robot.read_patrol(robot.M),robot.read_patrol(robot.R1),robot.read_patrol(robot.R2))
+    #print(inqCrs)
+    if inqCrs==1:
+        print(1)
+    elif inqCrs==2:
+        print(2)
+    elif inqCrs==3:
+        print(3)
+    elif inqCrs==4:
+        print(4)
 
 
